@@ -1,6 +1,7 @@
 package com.autourducode.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,11 @@ public class ProductServiceImplement implements ProductService {
     @Override
     public List<Product> lire() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public Optional<Product> lireUn(Long id) {
+        return productRepository.findById(id);
     }
 
     @Override
